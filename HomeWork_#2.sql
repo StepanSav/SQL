@@ -3,7 +3,7 @@ SQL_DDL
 
 Таблица employees
 
-1)	Создать таблицу employees
+-- 1)	Создать таблицу employees
 - id. serial,  primary key,
 - employee_name. Varchar(50), not null
 
@@ -12,7 +12,7 @@ create table employees(
 	employee_name Varchar(50) not null
 	);
 
-2)	Наполнить таблицу employee 70 строками.
+-- 2)	Наполнить таблицу employee 70 строками.
 insert into employees(employee_name)
 values ('Anna'),
 ('Sergey'),
@@ -59,7 +59,7 @@ values ('Anna'),
 
 Таблица salary
 
-3)	Создать таблицу salary
+-- 3)	Создать таблицу salary
 - id. Serial  primary key,
 - monthly_salary. Int, not null
 
@@ -68,7 +68,7 @@ create table salary(
 	monthly_salary int not null
 )
 
-4)	Наполнить таблицу salary 15 строками:
+-- 4)	Наполнить таблицу salary 15 строками:
 - 1000
 - 1100
 - 1200
@@ -107,7 +107,7 @@ values(1000),
 
 Таблица employee_salary
 
-5)	Создать таблицу employee_salary
+-- 5)	Создать таблицу employee_salary
 - id. Serial  primary key,
 - employee_id. Int, not null, unique
 - salary_id. Int, not null
@@ -123,7 +123,7 @@ create table employee_salary(
 	);
 
 
-6)	Наполнить таблицу employee_salary 40 строками:
+-- 6)	Наполнить таблицу employee_salary 40 строками:
 - в 10 строк из 40 вставить несуществующие employee_id
 
 id	employee_id	salary_id
@@ -172,12 +172,9 @@ values (3, 7),
 (44,1),
 (37,2);
 
-
-
-
 Таблица roles
 
-7)	Создать таблицу roles
+-- 7)	Создать таблицу roles
 - id. Serial  primary key,
 - role_name. int, not null, unique
 create table roles(
@@ -185,10 +182,10 @@ create table roles(
 	role_name int not null unique
 	);
 
-8)	Поменять тип столба role_name с int на varchar(30)
+-- 8)	Поменять тип столба role_name с int на varchar(30)
 alter table roles alter column role_name type varchar(30);
 
-9)	Наполнить таблицу roles 20 строками:
+-- 9)	Наполнить таблицу roles 20 строками:
 
 id	role_name
 1	Junior Python developer
@@ -237,7 +234,7 @@ values ('Junior Python developer'),
 
 Таблица roles_employee
 
-10)	Создать таблицу roles_employee
+-- 10)	Создать таблицу roles_employee
 - id. Serial  primary key,
 - employee_id. Int, not null, unique (внешний ключ для таблицы employees, поле id)
 - role_id. Int, not null (внешний ключ для таблицы roles, поле id)
@@ -252,7 +249,7 @@ create table roles_employee(
 		references roles (id) 
 	);
 
-11)	Наполнить таблицу roles_employee 40 строками:
+-- 11)	Наполнить таблицу roles_employee 40 строками:
 
 id	employee_id	role_id
 1	7	2
